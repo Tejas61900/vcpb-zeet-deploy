@@ -4,7 +4,9 @@ Replacement for vcpb/config/__init__.py
 import ast
 from os import environ
 from pyrogram import filters
+from dotenv import load_dotenv
 
+load_dotenv()
 API_ID = environ.get("API_ID")
 API_HASH = environ.get("API_HASH")
 TOKEN = environ.get("TOKEN")
