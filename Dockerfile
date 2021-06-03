@@ -128,6 +128,9 @@ RUN cd /root && \
     echo "command=/usr/local/sbin/xrdp -nodaemon" >> /etc/supervisor/conf.d/xrdp.conf && \
     echo "process_name = xrdp" >> /etc/supervisor/conf.d/xrdp.conf
 
+RUN apt-get install -y python3-pip && pip3 install -U pip
+RUN pip3 install -U python-dotenv
+
 COPY xrdp.ini /etc/xrdp/xrdp.ini
 COPY autostartup.sh /root/
 COPY __init__.py /home/__init__.py
